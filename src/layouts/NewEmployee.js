@@ -27,11 +27,12 @@ export default function NewEmployee() {
     } catch (err) {
       console.log(err);
     }
+    window.location.reload(true);
   };
 
   // jsx
   return (
-    <MainContainer sidebar='Employees'>
+    <div style={{ marginTop: "50px" }}>
       <h1 className='page-header'>Add New Employee</h1>
 
       <div className='row'>
@@ -77,6 +78,6 @@ export default function NewEmployee() {
           </form>
         </div>
       </div>
-    </MainContainer>
+    </div>
   );
 }

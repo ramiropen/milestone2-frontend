@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import MainContainer from "../MainContainer";
 import { Link } from "react-router-dom";
+import NewEmployee from "./NewEmployee";
 
 export default function Employees({ employees }) {
   // functions
@@ -55,6 +56,7 @@ export default function Employees({ employees }) {
           <Link to='/newemployee'>Add New Employee</Link>
         </div>
       </div>
+      <NewEmployee />
     </MainContainer>
   );
 }
