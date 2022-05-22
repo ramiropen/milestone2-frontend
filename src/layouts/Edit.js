@@ -15,7 +15,7 @@ export default function Edit() {
   // functions
   let handleSubmit = (e) => {
     e.preventDefault();
-    fetch("http://localhost:3000/employee/" + id, {
+    fetch("http://localhost:7777/employee/" + id, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

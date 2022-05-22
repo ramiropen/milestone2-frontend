@@ -10,15 +10,14 @@ export default function Employees({}) {
 
   // functions
   const getEmployees = () => {
-    fetch("http://localhost:3000/employee")
+    fetch("http://localhost:7777/employee")
       .then((response) => response.json())
-      .then((data) => {
-        setEmployees(data);
-      });
+      .then((data) => setEmployees(data)
+      );
   };
 
   const deleteEmployee = async (id) => {
-    await fetch(`http://localhost:3000/employee/${id}`, {
+    await fetch(`http://localhost:7777/employee/${id}`, {
       method: "DELETE",
     });
   };
@@ -48,16 +47,16 @@ export default function Employees({}) {
 
   // jsx
   return (
-    <div class='employees'>
+    <div className='employees'>
       <h1>Employees</h1>
       <table>
         <thead>
           <tr>
-            <th class='column'></th>
-            <th class='column'>Name</th>
-            <th class='column'>Position</th>
-            <th class='column'>Team</th>
-            <th class='column'>Salary</th>
+            <th className='column'></th> 
+            <th className='column'>Name</th>
+            <th className='column'>Position</th>
+            <th className='column'>Team</th>
+            <th className='column'>Salary</th>
           </tr>
         </thead>
         <tbody>{table}</tbody>

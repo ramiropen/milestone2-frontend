@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Employees from "./layouts/Employees";
 import Add from "./layouts/Add";
 import Edit from "./layouts/Edit";

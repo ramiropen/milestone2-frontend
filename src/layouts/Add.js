@@ -11,7 +11,7 @@ export default function Add() {
   // functions
   let handleSubmit = (e) => {
     e.preventDefault();
-    fetch("http://localhost:3000/employee", {
+    fetch("http://localhost:7777/employee", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
