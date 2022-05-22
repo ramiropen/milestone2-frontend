@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
 
 export default function Items({}) {
   // useState
@@ -29,18 +30,18 @@ export default function Items({}) {
       <td className='column'>{item.description}</td>
       <td className='column'>${item.price}</td>
       <td>
-        <button>
+        <Button variant="warning">
           <Link to={`/edit/${item._id}`}>EDIT</Link>
-        </button>
+        </Button>
 
-        <button
+        <Button variant='danger'
           onClick={() => {
             deleteItem(item._id);
             window.location.reload(true);
           }}
         >
           DELETE
-        </button>
+        </Button>
       </td>
     </tr>
   ));
@@ -61,7 +62,9 @@ export default function Items({}) {
         </thead>
         <tbody>{table}</tbody>
       </table>
-      <Link to='/add'>Add New Item</Link>
+      <Button variant="primary">
+        <Link to='/add'>Add New Item</Link>
+      </Button>
     </div>
   );
 }

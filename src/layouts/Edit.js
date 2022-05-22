@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
 
 export default function Edit() {
   let id = useLocation().pathname.substring(6); // employee's mongoDB id
