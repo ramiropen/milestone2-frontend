@@ -47,11 +47,11 @@ export default function Items({}) {
 
   // jsx
   return (
-    <div className='employees'>
+    <div>
       <h1>Store Inventory</h1>
       <table>
         <thead>
-          <tr>
+          <tr className='table'>
             <th className='column'></th> 
             <th className='column'>Product </th>
             <th className='column'>Quantity</th>

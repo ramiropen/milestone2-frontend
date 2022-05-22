@@ -1,5 +1,17 @@
+.row { 
+    height: 40px;
+    border-radius: 5px;
+}
+
+.column {
+    padding: 5px;
+}
+
+body {background-color: orangered;}
+
 .employees{margin: 20px}
 
 .row{outline: 1px solid black}
 
 .column{width: 150px}
+
