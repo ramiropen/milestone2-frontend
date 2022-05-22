@@ -3,22 +3,22 @@ import { Link } from "react-router-dom";
 
 export default function Add() {
   // useState
-  const [name, setName] = useState("John");
-  const [position, setPosition] = useState("CEO");
-  const [team, setTeam] = useState("");
-  const [salary, setSalary] = useState("");
+  const [product, setProduct] = useState("");
+  const [quantity, setQuantity] = useState("");
+  const [description, setDescription] = useState("");
+  const [price, setPrice] = useState("");
 
   // functions
   let handleSubmit = (e) => {
     e.preventDefault();
-    fetch("http://localhost:7777/employee", {
+    fetch("http://localhost:7777/items", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        name: name,
-        position: position,
-        team: team,
-        salary: salary,
+        product: product,
+        quantity: quantity,
+        description: description,
+        price: price,
       }),
     });
   };
@@ -26,38 +26,34 @@ export default function Add() {
   // jsx
   return (
     <div>
-      <h1>Add New Employee</h1>
+      <h1>Add Product</h1>
       <form
         onSubmit={handleSubmit}
         style={{ display: "flex", flexDirection: "column", width: "250px" }}
       >
         <input
           type='text'
-          name='name'
-          placeholder='name'
-          onChange={(e) => setName(e.target.value)}
+          placeholder='product'
+          onChange={(e) => setProduct(e.target.value)}
+        />
+        <input
+          type='text'       
+          placeholder='quantity'
+          onChange={(e) => setQuantity(e.target.value)}
+        />
+        <input
+          type='text'       
+          placeholder='description'
+          onChange={(e) => setDescription(e.target.value)}
         />
         <input
           type='text'
-          name='position'
-          placeholder='position'
-          onChange={(e) => setPosition(e.target.value)}
+          placeholder='price'
+          onChange={(e) => setPrice(e.target.value)}
         />
-        <input
-          type='text'
-          name='team'
-          placeholder='team'
-          onChange={(e) => setTeam(e.target.value)}
-        />
-        <input
-          type='text'
-          name='salary'
-          placeholder='salary'
-          onChange={(e) => setSalary(e.target.value)}
-        />
-        <input type='submit' value='Add Employee' />
+        <input type='submit' value='Add Product' />
       </form>
-      <Link to='/'>Return to Employees Page</Link>
+      <Link to='/'>Return to Inventory</Link>
     </div>
   );
 }

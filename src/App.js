@@ -1,5 +1,5 @@
 import React from "react";
-import Employees from "./layouts/Employees";
+import Items from "./layouts/Items";
 import Add from "./layouts/Add";
 import Edit from "./layouts/Edit";
 import NotFound from "./layouts/NotFound";
@@ -9,7 +9,7 @@ export default function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path='/' element={<Employees />} />
+        <Route exact path='/' element={<Items />} />
         <Route path='/add' element={<Add />} />
         <Route path='/edit/:id' element={<Edit />} />
         <Route element={<NotFound />} />

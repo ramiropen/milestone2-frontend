@@ -5,24 +5,24 @@ export default function Edit() {
   let id = useLocation().pathname.substring(6); // employee's mongoDB id
 
   // useState
-  const [employee, setEmployee] = useState({
-    name: "",
-    position: "",
-    team: "",
-    salary: "",
+  const [item, setItem] = useState({
+    product: "",
+    quantity: "",
+    description: "",
+    price: "",
   });
 
   // functions
   let handleSubmit = (e) => {
     e.preventDefault();
-    fetch("http://localhost:7777/employee/" + id, {
+    fetch("http://localhost:7777/items/" + id, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        name: employee.name,
-        position: employee.position,
-        team: employee.team,
-        salary: employee.salary,
+        product: item.product,
+        quantity: item.quantity,
+        description: item.description,
+        price: item.price,
       }),
     });
   };
@@ -30,38 +30,34 @@ export default function Edit() {
   // jsx
   return (
     <div>
-      <h1>Edit Employee</h1>
+      <h1>Edit Product</h1>
       <form
         onSubmit={handleSubmit}
         style={{ display: "flex", flexDirection: "column", width: "250px" }}
       >
         <input
           type='text'
-          placeholder='name'
-          name='name'
-          onChange={(e) => setEmployee({ ...employee, name: e.target.value })}
+          placeholder='product'
+          onChange={(e) => setItem({ ...item, product: e.target.value })}
         />
         <input
           type='text'
-          placeholder='position'
-          name='position'
-          onChange={(e) => setEmployee({ ...employee, position: e.target.value })}
+          placeholder='quantity'
+          onChange={(e) => setItem({ ...item, quantity: e.target.value })}
         />
         <input
           type='text'
-          placeholder='team'
-          name='team'
-          onChange={(e) => setEmployee({ ...employee, team: e.target.value })}
+          placeholder='description'
+          onChange={(e) => setItem({ ...item, description: e.target.value })}
         />
         <input
           type='text'
-          placeholder='salary'
-          name='salary'
-          onChange={(e) => setEmployee({ ...employee, salary: e.target.value })}
+          placeholder='price'
+          onChange={(e) => setItem({ ...item, price: e.target.value })}
         />
-        <input type='submit' value='Edit Employee' />
+        <input type='submit' value='Edit Product' />
       </form>
-      <Link to='/'>Return to Employees Page</Link>
+      <Link to='/'>Return to Inventory Page</Link>
     </div>
   );
 }
