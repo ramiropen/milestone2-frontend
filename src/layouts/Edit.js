@@ -71,7 +71,7 @@ export default function Edit() {
           value={item.price}
           onChange={(e) => setItem({ ...item, price: e.target.value })}
         />
-        <input type='submit' value='Edit Product' />
+        <Button variant='primary' type='submit' > Edit Product </Button>
       </form>
       <Link to='/'>Return to Inventory Page</Link>
     </div>

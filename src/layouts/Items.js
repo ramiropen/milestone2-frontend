@@ -62,9 +62,10 @@ export default function Items({}) {
         </thead>
         <tbody>{table}</tbody>
       </table>
-      <Button variant="primary">
-        <Link to='/add'>Add New Item</Link>
-      </Button>
+      <br/>
+      <a href="/add">
+      <Button variant="primary"> ADD NEW item </Button>
+      </a>
     </div>
   );
 }

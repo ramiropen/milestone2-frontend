@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
 
 export default function Add() {
   // useState
@@ -51,7 +52,7 @@ export default function Add() {
           placeholder='price'
           onChange={(e) => setPrice(e.target.value)}
         />
-        <input type='submit' value='Add Product' />
+        <Button variant='primary' type='submit'>Add Product</Button>
       </form>
       <Link to='/'>Return to Inventory</Link>
     </div>
